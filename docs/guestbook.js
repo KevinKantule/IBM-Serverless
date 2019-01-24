@@ -28,6 +28,17 @@ const guestbook = {
   }
 };
 
+const sgMail = (SENDGRID_API_KEY='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'); //require('@sendgrid/mail');
+//sgMail.setApiKey = (SENDGRID_API_KEY='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'); //(process.env.SENDGRID_API_KEY);  //SENDGRID_API_KEY='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'"
+const msg = {
+  to: "#email",
+  from: 'test@example.com',
+  subject: 'Sending with SendGrid is Fun',
+  text: 'and easy to do anywhere, even with Node.js',
+  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+};
+sgMail.send(msg);
+
 (function() {
 
   let entriesTemplate;
